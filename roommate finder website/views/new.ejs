@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+    <!-- nav  -->
+    <%- include('includes/navbar.ejs') %>
+    <!-- Form Section -->
+    <div class="flex items-center justify-center min-h-screen p-6">
+        <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-lg">
+            <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">Create an Account</h1>
+            <form method="POST" action="/index" enctype="multipart/form-data">
+                <!-- Grid for Form Fields -->
+                <div class="grid gap-6 md:grid-cols-2">
+                    <!-- First Name -->
+                    <div>
+                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">First Name</label>
+                        <input type="text" id="first_name" name="first_name" placeholder="John" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+                    
+
+                    <!-- Last Name -->
+                    <div>
+                        <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Last Name</label>
+                        <input type="text" id="last_name" name="last_name" placeholder="Doe" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div>
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="example@domain.com" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- State -->
+                    <div>
+                        <label for="state" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">State</label>
+                        <input type="text" id="state" name="state" placeholder="Uttar Pradesh" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- City -->
+                    <div>
+                        <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">City</label>
+                        <input type="text" id="city" name="city" placeholder="Prayagraj" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- Pin Code -->
+                    <div>
+                        <label for="pin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pin Code</label>
+                        <input type="tel" id="pin" name="pin" placeholder="123456" pattern="[0-9]{6}" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- Age -->
+                    <div>
+                        <label for="age" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Age</label>
+                        <input type="number" id="age" name="age" placeholder="21" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+                    <!-- Budget -->
+                    <div>
+                        <label for="budget" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Budget</label>
+                        <input type="number" id="budget" name="budget" placeholder="10000 Rs" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+
+
+                    <!-- Gender -->
+                    <div>
+                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Gender</label>
+                        <select id="gender" name="gender" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Vacant -->
+                    <div>
+                        <label for="vacant" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Vacant</label>
+                        <input type="number" id="vacant" name="vacant" placeholder="2" required
+                            class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                    </div>
+                
+                 <!-- Image Upload -->
+                 <div>
+                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Upload Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" required
+                        class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                </div>
+
+                <!-- Room Image Upload -->
+                 <div>
+                     <label for="room" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Upload Room Image</label>
+                      <input type="file" id="room" name="room" accept="image/*" required
+                      class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500" />
+                 </div><br>
+                 <div class="grid grid-rows-5 gap-4">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Description</label>
+                    <textarea id="description" name="description" placeholder="Description" rows="5" required
+                        class="w-full p-2.5 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                
+                
+
+              
+
+                <!-- Submit Button -->
+                 <br>
+                <button type="submit"
+                    class="mt-8 w-full text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-300">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

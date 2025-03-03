@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplates") %>
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-200 dark:bg-gray-900 relative">
+    <!-- Background image and color overlay -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://www.example.com/path/to/your-background-image.jpg'); background-color: rgba(34, 49, 63, 0.7); mix-blend-mode: overlay;"></div>
+
+    <!-- Main Profile Section with Right Margin -->
+    <main class="relative z-10 flex flex-col items-center justify-center py-16 px-4 md:px-8 lg:px-16 mx-auto widthset" style="margin-top: 40px; margin-bottom: 40px;">
+
+        <!-- Profile Card (Room Listing) -->
+        <div class="w-full max-w-2xl bg-white bg-opacity-90 border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 p-6 mb-8">
+            <!-- Room Image and Information -->
+            <div class="flex flex-col items-center text-center">
+                <!-- Profile Image with onclick event to open modal -->
+                <img id="profile-image" class="w-64 h-64 mb-4 rounded-full shadow-lg cursor-pointer" src="<%= user.image %>" alt="User profile image" >
+                <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Room for Rent - <%= user.first_name %> <%= user.last_name %></h2>
+                <p class="text-sm text-gray-500 dark:text-gray-400">Room available for rent • <%= user.age %> years • Located in <%= user.city %>, <%= user.state %></p>
+            </div>
+
+            <!-- Room Actions (Contact & Inquiry) -->
+            <div class="flex justify-center space-x-2 mt-4">
+                <span class="bg-red-500 text-white text-xs px-3 py-2 rounded-full hover:bg-blue-600 hover:text-gray-900">Available Now</span>
+                <button class="px-4 py-1 text-sm font-medium text-blue-600 border border-blue-600 rounded-full hover:bg-blue-600 hover:text-gray-900 transition-all duration-300">Inquire Now</button>
+                <button class="px-4 py-1 text-sm font-medium text-red-600 border border-red-600 rounded-full hover:bg-red-600 hover:text-gray-900 transition-all duration-300">Schedule a Visit</button>
+            </div>
+
+            <!-- Room Location and Rent Information -->
+            <div class="mt-6 text-center">
+                <p class="text-gray-700 dark:text-gray-300"><strong>Located in:</strong> <%= user.city %>, <%= user.state %></p>
+                <p class="text-gray-700 dark:text-gray-300 mt-2"><strong>Rent:</strong> <%= user.budget %> per month</p>
+                <div class="flex flex-wrap justify-center mt-4">
+                    <div class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md px-4 py-2 m-2">
+                        <strong>Facilities:</strong> Wi-Fi, Fully Furnished, AC, 24/7 Water
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md px-4 py-2 m-2">
+                        <strong>For:</strong> <%= user.gender %>
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md px-4 py-2 m-2">
+                        <strong>Availability:</strong> Ready to move in
+                    </div>
+                    <div class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md px-4 py-2 m-2">
+                        <strong>Lease Duration:</strong> 6 months or more
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Description Section -->
+            <div class="mt-6">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Room Description</h3>
+                <p class="text-gray-700 dark:text-gray-300 mt-2">Description here.</p>
+            </div>
+        </div>
+
+        <!-- Call to Action for Renting the Room -->
+        <div class="w-full max-w-2xl bg-white bg-opacity-90 border border-gray-200 rounded-lg shadow-lg dark:bg-gray-800 dark:border-gray-700 p-6 text-center">
+            <div class="flex items-center justify-center">
+                <img class="w-8 h-8 mr-3 rounded-full" src="<%= user.image %>" alt="Room owner image">
+                <p class="text-gray-900 dark:text-white"><%= user.first_name %> <%= user.last_name %> is available for renting now</p>
+            </div>
+            <p class="mt-3 text-gray-500 dark:text-gray-400">This room is currently available for rent. To rent or inquire further, please contact us.</p>
+            <div class="flex justify-center mt-4 space-x-4">
+                <a href="#" class="px-4 py-2 text-sm font-medium text-white bg-teal-500 rounded-full hover:bg-teal-600 hover:text-gray-900 transition-all duration-300">Contact Now</a>
+                <a href="#" class="px-4 py-2 text-sm font-medium text-teal-500 border border-teal-500 rounded-full hover:bg-teal-500 transition-all duration-300">Schedule Visit</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">Already rented? <a href="#" class="text-teal-500 hover:underline">Find other rooms</a></p>
+        </div>
+    </main>
+
+    <!-- Modal for Image -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50" onclick="closeModal();">
+        <img id="expanded-image" class="max-w-full max-h-full object-contain" src="">
+    </div>
+
+    <!-- <script>
+        // Open the modal and show the clicked image
+        function openModal() {
+            var img = document.getElementById('profile-image');
+            var modal = document.getElementById('image-modal');
+            var expandedImage = document.getElementById('expanded-image');
+            
+            expandedImage.src = img.src;
+            modal.classList.remove('hidden'); // Show the modal
+        }
+
+        // Close the modal when clicked outside the image
+        function closeModal() {
+            var modal = document.getElementById('image-modal');
+            modal.classList.add('hidden'); // Hide the modal
+        }
+    </script> -->
+</body>
+

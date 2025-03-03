@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyslexia Game Selector</title>
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        /* Dropdown & Button Section */
+        .game-container {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+        }
+
+        .dropdown-container {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #444;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .game-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            font-size: 16px;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            width: 30%;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎮 Dyslexia-Friendly Game Selector</h1>
+    <p>Choose a *difficulty level* and click on a game to start!</p>
+
+    <div class="game-container">
+        <!-- Mild Dyslexia Level -->
+        <div class="dropdown-container">
+            <label for="mild">🌱 Mild Dyslexia</label>
+            <select id="mild">
+                <option value="letter-matching">Letter Matching</option>
+                <option value="easy-spelling">Easy Spelling</option>
+                <option value="word-puzzle">Word Puzzle</option>
+            </select>
+        </div>
+        <div class="game-buttons">
+            <button onclick="startGame('mild')">Start Game</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <!-- Moderate Dyslexia Level -->
+        <div class="dropdown-container">
+            <label for="moderate">🌿 Moderate Dyslexia</label>
+            <select id="moderate">
+                <option value="memory-challenge">Memory Challenge</option>
+                <option value="sentence-builder">Sentence Builder</option>
+                <option value="rhyming-words">Rhyming Words</option>
+            </select>
+        </div>
+        <div class="game-buttons">
+            <button onclick="startGame('moderate')">Start Game</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <!-- Severe Dyslexia Level -->
+        <div class="dropdown-container">
+            <label for="severe">🌳 Severe Dyslexia</label>
+            <select id="severe">
+                <option value="listening-exercise">Listening Exercise</option>
+                <option value="shape-recognition">Shape Recognition</option>
+                <option value="visual-tracking">Visual Tracking</option>
+            </select>
+        </div>
+        <div class="game-buttons">
+            <button onclick="startGame('severe')">Start Game</button>
+        </div>
+    </div>
+
+    <script>
+        function startGame(level) {
+            let selectedGame = document.getElementById(level).value;
+            let gameUrls = {
+                "letter-matching": "https://example.com/letter-matching",
+                "easy-spelling": "https://example.com/easy-spelling",
+                "word-puzzle": "https://example.com/word-puzzle",
+                "memory-challenge": "https://example.com/memory-challenge",
+                "sentence-builder": "https://example.com/sentence-builder",
+                "rhyming-words": "https://example.com/rhyming-words",
+                "listening-exercise": "https://example.com/listening-exercise",
+                "shape-recognition": "https://example.com/shape-recognition",
+                "visual-tracking": "https://example.com/visual-tracking"
+            };
+
+            if (gameUrls[selectedGame]) {
+                window.open(gameUrls[selectedGame], "_blank");
+            } else {
+                alert("Game not available. Please select a different one.");
+            }
+        }
+    </script>
+
+</body>
+</html>

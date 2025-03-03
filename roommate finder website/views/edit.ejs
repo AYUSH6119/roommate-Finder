@@ -1,0 +1,23 @@
+
+<% layout("/layouts/boilerplates") %>
+<head>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Message</h2>
+        <form method="POST" action="/chat/<%=chat_id%>?_method=PUT">
+        <textarea  rows="4" placeholder="Enter your message here" name="message"><%= chats.message %></textarea>
+
+        <p> Message From :<%=chats.from %>
+          To <%= chats.to %>
+        </p>
+
+        <button>Edit Message</button>
+        </form>
+
+        <h3>Edited Message:</h3>
+        <p id="editedMessage"></p>
+
+    </div>
+</body>
